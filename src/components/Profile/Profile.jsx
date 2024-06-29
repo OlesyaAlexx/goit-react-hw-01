@@ -1,4 +1,4 @@
-/* import React from "react"; */
+import styles from "./Profile.module.css";
 
 const Profile = ({
   name,
@@ -8,20 +8,23 @@ const Profile = ({
   stats: { followers, views, likes },
 }) => {
   return (
-    <div>
-      <div>
-        <img src={image} alt="User avatar" /> <p>{name}</p>
-        <p>{tag}</p> <p>{location}</p>{" "}
+    <div className={styles.container}>
+      <div className={styles.photoBox}>
+        <img className={styles.avatar} src={image} alt="User avatar" />
+        <p className={styles.title}>{name}</p>
+        <p className={styles.details}>{tag}</p>
+        <p className={styles.details}>{location}</p>
       </div>
-      <ul>
-        <li>
-          <span>Followers</span> <span>{followers}</span>{" "}
+      <ul className={styles.stats}>
+        <li className={styles.statsItem}>
+          <span>Followers</span>{" "}
+          <span className={styles.quantity}>{followers}</span>
         </li>
-        <li>
-          <span>Views</span> <span>{views}</span>{" "}
+        <li className={styles.statsItem}>
+          <span>Views</span> <span className={styles.quantity}>{views}</span>
         </li>
-        <li>
-          <span>Likes</span> <span>{likes}</span>{" "}
+        <li className={styles.statsItem}>
+          <span>Likes</span> <span className={styles.quantity}>{likes}</span>
         </li>
       </ul>
     </div>
